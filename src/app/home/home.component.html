@@ -1,0 +1,27 @@
+<div class="ui-container edit1">
+    <h1>I'm looking for..</h1>
+<form class="ui form">
+    <div class="field">
+      <input type="text" style="width: 800px;" name="job-description" placeholder="Enter a Job Description">
+      <button class="ui primary button" style="margin-left: 100px;">Search</button>
+    </div>
+    <div>
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0"><label>Full Time</label>
+        <input type="checkbox" tabindex="1"><label>Part Time/Casual/Freelance</label>
+      </div>
+      <div class="ui selection dropdown" style="margin-left: 400px;">
+        <input type="hidden" name="location">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select your Location</div>
+        <div class="menu">
+          <div class="item" data-value="1">India</div>
+          <div class="item" data-value="0">Australia</div>
+        </div>
+        </div>
+    </div>
+  </form>
+  <br><br><br>
+  <button class="ui primary button" style="margin-left: 600px;" (click)="forwardTo()">Register</button>
+</div>
+

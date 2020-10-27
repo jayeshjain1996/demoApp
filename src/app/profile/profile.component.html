@@ -1,0 +1,19 @@
+<table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Profile</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="let u of userList">
+        <td><img height="120px" width="100px" src="{{u.imageURL}}" alt="{{u.firstname}}"></td>
+        <td>I'm {{u.firstname}} {{u.lastname}} and Im above {{u.age}} years and
+            you can send your emails to {{u.email}}. I live in the state of {{u.state}}.
+            I like to play {{u.interest}}. And please send me newsletter. Please reach out to me on my phone number {{u.number}}    
+        </td>
+        <td><a (click)="onEdit(u)" class="ui primary button">Edit Profile</a></td>
+      </tr>
+    </tbody>
+  </table> 

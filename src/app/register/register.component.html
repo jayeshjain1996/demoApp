@@ -1,0 +1,63 @@
+<div class="ui-container" style="width: 600px;margin-left: 400px;">
+    <h1>Register</h1>
+<form #form="ngForm" autocomplete="off" class="ui form" (submit)="onSubmit(form)">
+    <input type="hidden" #id="ngModel" name="id" [(ngModel)]="userService.formData.id">
+    <div class="two fields">
+        <div class="field">
+          <input type="text" #firstname="ngModel" name="firstname" placeholder="First Name" [(ngModel)]="userService.formData.firstname" required maxlength="20">
+          <p *ngIf="firstname.invalid && firstname.touched" class="field error">This is required</p>
+        </div>
+        <div class="field">
+          <input type="text" #lastname="ngModel" name="lastname" placeholder="Last Name" [(ngModel)]="userService.formData.lastname" required>
+          <p *ngIf="last.invalid && lastname.touched" class="field error">This is required</p>
+        </div>
+    </div>
+    <div class="field">
+       <label>upload your photo</label>
+       <input type="file" (change)="imageSelected($event)">
+    </div>
+    <div class="field">
+      <input type="email" #email="ngModel" name="email" placeholder="Email" [(ngModel)]="userService.formData.email" required>
+      <p *ngIf="email.invalid && email.touched" class="field error">This is required</p>
+    </div>
+    <div class="field"> 
+      <input type="text" #number="ngModel" name="number" placeholder="(541)754-3010" [(ngModel)]="userService.formData.number" required>
+      <p *ngIf="number.invalid && number.touched" class="field error">This is required</p>
+    </div>
+    <div class="field">
+        <select class="ui fluid dropdown" #state="ngModel" name="state" [(ngModel)]="userService.formData.state" required>
+            <option value="">State</option>
+            <option value="MH">Maharashtra</option>
+            <option value="RJ">Rajasthan</option>
+            <option value="KL">Kerala</option>
+            <option value="KR">Karnataka</option>
+            <option value="UP">Uttar Pradesh</option>
+            <option value="BH">Bihar</option>
+        </select>
+        <p *ngIf="state.invalid && state.touched" class="field error">This is required</p>
+    </div>
+    <div class="field">
+        <select class="ui fluid dropdown" #country="ngModel" name="country" [(ngModel)]="userService.formData.country" required>
+            <option value="">Country</option>
+            <option value="IN">India</option>
+            <option value="PK">Pakistan</option>
+            <option value="USA">United States of America</option>
+            <option value="BG">Bangladesh</option>
+            <option value="SL">Sri Lanka</option>
+            <option value="UAE">United Arab Emirates</option>
+            <option value="TH">Thailand</option>
+        </select>
+        <p *ngIf="country.invalid && country.touched" class="field error">This is required</p>
+    </div>
+    <div class="field"> 
+       <input type="text" #address="ngModel" name="address" placeholder="Address" [(ngModel)]="userService.formData.address" required>
+       <p *ngIf="address.invalid && address.touched" class="field error">This is required</p>
+    </div>
+    <div class="field"> 
+       <input type="text" #interest="ngModel" name="interest" placeholder="Interest" [(ngModel)]="userService.formData.interest" required>
+       <p *ngIf="interest.invalid && interest.touched" class="field error">This is required</p>
+    </div>
+    <button class="ui button" type="reset">Cancel</button>
+    <button class="ui button primary" type="submit">Submit</button>
+  </form>
+</div>
